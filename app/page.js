@@ -1,4 +1,4 @@
-import Post from "./post"
+import Article from "./article"
 
 const api = 'https://jsonplaceholder.typicode.com/posts'
 
@@ -8,9 +8,9 @@ const loadDataFromServer = async ()=> {
 }
 
 export default async () => {
-    const posts = await loadDataFromServer()
+    const articles = await loadDataFromServer()
     return (<>
         <h1>My blog</h1>
-        {posts.map( p => <Post key={p.id} {...p}/>)}
+        {articles.map( p => <Article key={p.id} {...p}/>)}
     </>)
 }
